@@ -124,5 +124,5 @@ Reach out to the project maintainers or open an issue in the repository.
 > 🎯 **Ready to get started?**  
 > Click the [Data Pipeline](https://drive.google.com/file/d/1CCEmcRsECJjxkxj6UJQOqFn-3c7ulu5V/view?usp=drive_link) to build your first Master Dataset in under 5 minutes.
 
-*Last updated: March 2026 | Compatible with Python 3.8+ and Google Colab*
+*Last updated: February 2026 | Compatible with Python 3.8+ and Google Colab*
 ```
