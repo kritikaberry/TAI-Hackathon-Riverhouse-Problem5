@@ -24,7 +24,7 @@ Choose the tool that fits your workflow:
 |------|----------|------|
 | **🔄 Data Pipeline** | Download & build the latest Master Dataset from scratch | [Open in Google Colab](https://drive.google.com/file/d/1CCEmcRsECJjxkxj6UJQOqFn-3c7ulu5V/view?usp=drive_link) |
 | **📊 Visualizations** | Generate charts & insights from your existing `AIID_Master_Dataset.xlsx` | [Open in Google Colab](https://drive.google.com/file/d/1nM53_u8GWCeAFzoSXLw8tXW74cHeMyDc/view?usp=drive_link) |
-| **🌐 Live Dashboard** | Explore consolidated data interactively (no download needed) | [View Streamlit Dashboard](https://your-streamlit-app-link.streamlit.app/) |
+| **🌐 Live Dashboard** | Explore consolidated data interactively (no download needed) | [View Streamlit Dashboard](https://aiidsdatahouse.streamlit.app/) |
 
 ### How It Works
 1. **Pipeline Notebook**: Visits the official AI Incident Database website → downloads the latest archive → cleans, deduplicates, and merges source files → exports a polished Excel workbook.
