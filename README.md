@@ -11,7 +11,7 @@
 - [🛠️ How to Customize](#-how-to-customize)
 - [🔍 Key Features](#-key-features)
 - [🌐 Streamlit — Data Visualization](#-streamlit--data-visualization)
-- [🤖 Ask a Question — Query with Custom LLM](#-ask-a-question--query-with-custom-llm)
+- [🤖 Ask a Question — Query with Custom LLM](#ask-a-question)
 - [❓ Support & Documentation](#-support--documentation)
 
 ---
@@ -88,7 +88,7 @@ COLUMNS = {
 
 ---
 
-## 🌐 Streamlit — Data Visualization : (#-https://aiidsdatahouse.streamlit.app)
+## <a id="streamlit"></a>🌐 Streamlit — Data Visualization(#-https://aiidsdatahouse.streamlit.app)
 
 - **Live dashboard** from the Master Dataset (no spreadsheets required)
 - **Filters + search:** time, domain, severity, sector, geography, AI tech, status, source + keyword search
@@ -100,7 +100,7 @@ COLUMNS = {
 
 ---
 
-## 🤖 Ask a Question - Query the Database with Custom LLM
+## <a id="ask-a-question"></a>🤖 Ask a Question - Query the Database with Custom LLM
 
 - Ask in plain English; no SQL needed  
 - Gemini maps your question to dataset filters/columns. Any user from any background can query as per their requirement. For instance, "What is the highest concern in ai incidents with impact to humans?". 
