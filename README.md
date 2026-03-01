@@ -1,107 +1,108 @@
-## AI Incident Database (AIID) Master Dataset Builder
+# AI Incident Database (AIID) Master Dataset Builder
 
-This project provides an automated pipeline to consolidate multiple, unstructured AI incident datasets into a single, clean, and comprehensive **Master Dataset**. It is designed for researchers, policy teams, and analysts to explore AI safety records without manual data wrangling.
-
----
-
-### 🚀 Access the Tools
-
-Depending on your needs, you can run the data pipeline, visualize existing data, or explore the live dashboard.
-
-#### **1. Data Pipeline (Google Colab)**
-
-Use this to download the latest raw data from AIID and build your own Master Dataset.
-
-* **Action:** [](https://drive.google.com/file/d/1CCEmcRsECJjxkxj6UJQOqFn-3c7ulu5V/view?usp=drive_link)
-* 
-**How it works:** This notebook visits the AIID website, downloads the latest archive, cleans the files, and joins them into one Excel spreadsheet.
-
-
-
-#### **2. Visualizations (Google Colab)**
-
-Use this if you already have a Master Dataset and want to generate automated charts and insights.
-
-* **Action:** [](https://drive.google.com/file/d/1nM53_u8GWCeAFzoSXLw8tXW74cHeMyDc/view?usp=drive_link)
-* **How it works:** Upload your `AIID_Master_Dataset.xlsx` file to the notebook to see growth trends, top risk domains, and harm rate analytics.
-
-#### **3. Interactive Dashboard (Streamlit)**
-
-Explore the consolidated data in a live, web-based interface.
-
-* **Action:** **[View Live Streamlit Dashboard](https://www.google.com/search?q=https://your-streamlit-app-link.streamlit.app/)**
+> **One-click pipeline to transform fragmented AI incident reports into a clean, analysis-ready Master Dataset.**  
+> Built for researchers, policy teams, and analysts who want insights.
 
 ---
 
-### 📦 Dataset Overview
-
-The pipeline joins five key files from the **AI Incident Database** using the **Incident ID** as the common link:
-
-* 
-**incidents.csv**: The backbone containing titles, descriptions, and entities involved.
-
-
-* 
-**MIT FutureTech**: Risk domains, intent, and deployment timing.
-
-
-* 
-**GMF (Goals, Methods & Failures)**: Technical analysis of AI goals and failure modes.
-
-
-* 
-**CSETv1**: Policy details including harm levels, sectors, and geographic location.
-
-
-* 
-**duplicates.csv**: Used to automatically filter out duplicate records.
-
-
+## 📋 Table of Contents
+- [✨ Quick Start](#-quick-start)
+- [📦 What's Included](#-whats-included)
+- [🛠️ How to Customize](#-how-to-customize)
+- [🔍 Key Features](#-key-features)
+- [❓ Support & Documentation](#-support--documentation)
 
 ---
 
-### 🛠️ Configuration & Updates
+## ✨ Quick Start
 
-If the AIID team renames a column or adds new fields, you can update the pipeline without writing new code. All settings live in **Cell 1 (⚙️ Configuration)**:
+Choose the tool that fits your workflow:
 
-* 
-**Renamed Columns**: If a source column is renamed, update the left side of the mapping in the `COLUMNS` dictionary.
+| Tool | Best For | Link |
+|------|----------|------|
+| **🔄 Data Pipeline** | Download & build the latest Master Dataset from scratch | [Open in Google Colab](https://drive.google.com/file/d/1CCEmcRsECJjxkxj6UJQOqFn-3c7ulu5V/view?usp=drive_link) |
+| **📊 Visualizations** | Generate charts & insights from your existing `AIID_Master_Dataset.xlsx` | [Open in Google Colab](https://drive.google.com/file/d/1nM53_u8GWCeAFzoSXLw8tXW74cHeMyDc/view?usp=drive_link) |
+| **🌐 Live Dashboard** | Explore consolidated data interactively (no download needed) | [View Streamlit Dashboard](https://your-streamlit-app-link.streamlit.app/) |
 
-
-* 
-**New Columns**: To include new data, add the column name to the relevant dictionary and the `MASTER_COLUMN_ORDER` list.
-
-
-* 
-**Schema Health Check**: Cell 4 proactively flags missing or new columns before processing, preventing silent failures.
-
-
+### How It Works
+1. **Pipeline Notebook**: Visits the official AI Incident Database website → downloads the latest archive → cleans, deduplicates, and merges source files → exports a polished Excel workbook.
+2. **Visualization Notebook**: Upload your Master Dataset → instantly generate trend charts, risk domain breakdowns, and harm analytics.
+3. **Streamlit Dashboard**: Filter, search, and export insights through a user-friendly web interface.
 
 ---
 
-### 🔍 Key Features
+## 📦 What's Included: Dataset Overview
 
-* 
-**Automated Pipeline**: Scrapes the AIID website to find and download the latest data snapshot automatically.
+The pipeline intelligently merges **5 source files** from the AI Incident Database using `Incident ID` as the primary key:
 
+| Source File | Key Content | Purpose |
+|-------------|-------------|---------|
+| `incidents.csv` | Titles, descriptions, involved entities | Core incident records |
+| `MIT FutureTech` | Risk domains, intent, deployment timeline | Technical risk classification |
+| `GMF (Goals, Methods & Failures)` | AI objectives, failure modes, technical analysis | Root-cause insights |
+| `CSETv1` | Harm severity, affected sectors, geographic data | Policy & impact context |
+| `duplicates.csv` | Duplicate record identifiers | Automated deduplication |
 
-* 
-**Data Provenance**: Includes a `Data Sources` flag for every row, showing which research teams classified that incident.
-
-
-* 
-**Formatted Excel Export**: Generates a workbook with the full dataset, a plain-English data dictionary, and a coverage map.
-
-
-* 
-**Data Cleaning**: Automatically standardizes dates, removes numeric prefixes from labels, and cleans internal code names.
-
-
+✅ **Output**: A single, well-structured `AIID_Master_Dataset.xlsx` with consistent formatting and enriched metadata.
 
 ---
 
-### 📖 Documentation & Support
+## 🛠️ How to Customize (No Code Required!)
 
-For detailed information on limitations, assumptions, and a full FAQ, please refer to the [AIID Documentation]([https://www.google.com/search?q=./AIID_Documentation.docx](https://docs.google.com/document/d/1WzPJILZaSqp_xKALNayNcByV_Q9XE-_4/edit?usp=drive_link&ouid=112845759301634096831&rtpof=true&sd=true)).
+The pipeline is designed for easy maintenance. All configuration lives in **Cell 1: ⚙️ Configuration**.
 
-Would you like me to generate a summary table of the most common columns that will appear in your Master Dataset?
+### 🔁 If a source column is renamed:
+
+# Update the COLUMNS mapping dictionary
+`
+COLUMNS = {
+    "old_source_column_name": "master_column_name",  # ← Change left side only
+    ...
+}
+`
+
+### ➕ To add a new field:
+1. Add the column to the relevant source dictionary in `COLUMNS`
+2. Include it in the `MASTER_COLUMN_ORDER` list to control output sequence
+
+### 🩺 Schema Health Check (Cell 4)
+- Automatically detects missing or unexpected columns
+- Warns *before* processing begins—no silent failures
+- Helps you adapt quickly to AIID updates
+
+> 💡 **Pro Tip**: Always run Cell 4 first when updating the pipeline to validate compatibility.
+
+---
+
+## 🔍 Key Features
+
+| Feature | Benefit |
+|---------|---------|
+| **🤖 Fully Automated Scraping** | Fetches the latest AIID archive—no manual downloads |
+| **🔍 Data Provenance Tracking** | Every row includes a `Data Sources` flag showing which research team contributed the classification |
+| **📄 Polished Excel Export** | Includes: (1) Master dataset, (2) Plain-English data dictionary, (3) Source coverage map |
+| **🧹 Smart Data Cleaning** | Standardizes dates, removes numeric prefixes (e.g., "1. Bias"), and normalizes internal codes |
+| **🛡️ Future-Proof Design** | Configuration-driven architecture adapts to schema changes without code rewrites |
+
+---
+
+## ❓ Support & Documentation
+
+📚 **Full Documentation**:  
+For limitations, methodology notes, and FAQ, see the [AIID Master Dataset Guide](https://docs.google.com/document/d/1WzPJILZaSqp_xKALNayNcByV_Q9XE-_4/edit?usp=drive_link&ouid=112845759301634096831&rtpof=true&sd=true).
+
+🛠️ **Troubleshooting Tips**:
+- Ensure you're signed into Google to access Colab notebooks
+- If links don't open, copy/paste the URL directly into your browser
+- For dashboard access issues, verify the Streamlit app is publicly deployed
+
+💬 **Have feedback or need help?**  
+Reach out to the project maintainers or open an issue in the repository.
+
+---
+
+> 🎯 **Ready to get started?**  
+> Click the [Data Pipeline](https://drive.google.com/file/d/1CCEmcRsECJjxkxj6UJQOqFn-3c7ulu5V/view?usp=drive_link) to build your first Master Dataset in under 5 minutes.
+
+*Last updated: March 2026 | Compatible with Python 3.8+ and Google Colab*
+```
