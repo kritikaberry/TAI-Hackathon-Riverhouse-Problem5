@@ -96,12 +96,14 @@ COLUMNS = {
 - **Trends & themes:** yearly volume, severity mix, pies, word cloud
 - **Export & share:** filtered table → CSV download + one Streamlit Cloud link
 
-Export & share: filtered table → CSV download + one Streamlit Cloud link
 ---
 
-## 🤖 Ask a Question (Gemini / SQL-like Query)
+## 🤖 Ask a Question - Query the Database with Custom LLM
 
-The **Ask a question (Gemini)** feature adds **natural-language search** over the same dataset. Users type a question in plain English (e.g. *“Show me healthcare incidents with high severity”* or *“Which sectors have the most lives lost?”*); the app sends it to the **query handler**, which uses Google’s Gemini API to interpret the question, map it to the dataset’s columns and filters, and produce a query plan. That plan is executed on the loaded DataFrame and the **result table** is shown below; an expandable **Query plan (SQL-like)** section shows the logic so users can see how the answer was built. No pre-built filters or charts are required—the AI bridges “what I want to know” and “what the data can answer.” For deployment, the Gemini API key is set in the app’s **Settings → Secrets** as `google_api_key` so the feature works in production without hardcoding keys in the repo.
+- Ask in plain English; no SQL needed  
+- Gemini maps your question to dataset filters/columns. Any user from any background can query as per their requirement. For instance, "What is the highest concern in ai incidents with impact to humans?". 
+- Shows results in a data table + SQL query
+
 ---
 
 ## ❓ Support & Documentation
