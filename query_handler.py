@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from google import genai
 
 # Hardcode your Gemini API key here (or pass it when calling policy_data_assistant)
-GEMINI_API_KEY = "AIzaSyAbApoO2lhrKMU8tVjYnRQCQWJ9ZwYSgCI"
+GEMINI_API_KEY = "enter api key"
 
 
 # =========================
