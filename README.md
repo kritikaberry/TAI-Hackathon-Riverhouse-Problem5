@@ -88,17 +88,13 @@ COLUMNS = {
 
 ## 🌐 Streamlit — Data Visualization
 
-Live dashboard from the Master Dataset (no spreadsheets required)
-
-Filters + search: time, domain, severity, sector, geography, AI tech, status, source + keyword search
-
-Impact & speed lenses: lives lost/injuries thresholds, turnaround time, time-to-vet
-
-KPI tiles: totals, high-harm (heuristic), usable %, avg/median times, open/pending, YoY shifts
-
-Decision views: risk heatmap, time-to-vet leaders/laggards, human-impact bubble/scatter
-
-Trends & themes: yearly volume, severity mix, pies, word cloud
+- **Live dashboard** from the Master Dataset (no spreadsheets required)
+- **Filters + search:** time, domain, severity, sector, geography, AI tech, status, source + keyword search
+- **Impact & speed lenses:** lives lost/injuries thresholds, turnaround time, time-to-vet
+- **KPI tiles:** totals, high-harm (heuristic), usable %, avg/median times, open/pending, YoY shifts
+- **Decision views:** risk heatmap, time-to-vet leaders/laggards, human-impact bubble/scatter
+- **Trends & themes:** yearly volume, severity mix, pies, word cloud
+- **Export & share:** filtered table → CSV download + one Streamlit Cloud link
 
 Export & share: filtered table → CSV download + one Streamlit Cloud link
 ---
