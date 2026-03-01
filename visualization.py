@@ -88,6 +88,12 @@ col_source = pick_col(df, ["Source", "Data Source", "Origin"])
 col_id = pick_col(df, ["ID", "Incident ID", "Case ID", "Index"])
 col_vendor = pick_col(df, ["Company", "Vendor", "Organization", "Developer", "Manufacturer", "Deploying Organization"])
 
+# Remove duplicate rows so filters and metrics use unique incidents
+if col_id and col_id in df.columns:
+    df = df.drop_duplicates(subset=[col_id], keep="first").reset_index(drop=True)
+else:
+    df = df.drop_duplicates(keep="first").reset_index(drop=True)
+
 df_dash = df.copy()
 df_dash["_year"] = to_year(df_dash[col_year]) if col_year else pd.Series([pd.NA] * len(df_dash), dtype="Int64")
 
