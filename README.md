@@ -1,4 +1,4 @@
-# AI Incident Database (AIID) Master Dataset Builder
+# AI Incident Database (AIID) Master Dataset Builder by team JVAAKOS
 
 > **One-click pipeline to transform fragmented AI incident reports into a clean, analysis-ready Master Dataset.**  
 > Built for researchers, policy teams, and analysts who want insights.
