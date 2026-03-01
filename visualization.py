@@ -465,8 +465,14 @@ st.divider()
 
 # Gemini query: one text box, result table below
 st.subheader("Ask a question (Gemini)")
-st.caption("Enter a question about the incidents; the result table appears below. (API key is set in query_handler.py)")
+st.caption("Enter a question about the incidents; the result table appears below. (API key: set in Streamlit Secrets when deployed, or in query_handler.py for local runs.)")
 query_text = st.text_input("Your query", placeholder="e.g. Show me incidents in healthcare with high severity", key="gemini_query")
+# Use API key from Streamlit Secrets (deploy) or None so query_handler uses its default (local)
+_gemini_key = None
+try:
+    _gemini_key = st.secrets.get("google_api_key") or (st.secrets.get("api") or {}).get("google_api_key")
+except Exception:
+    pass
 if st.button("Run query"):
     if policy_data_assistant is None:
         st.error("Gemini support not installed. Run: **pip install google-genai** then restart the app.")
@@ -475,7 +481,8 @@ if st.button("Run query"):
     else:
         with st.spinner("Running query…"):
             try:
-                out = policy_data_assistant((query_text or "").strip(), None, df)
+                # Pass API key from Streamlit Secrets (_gemini_key) into query_handler
+                out = policy_data_assistant((query_text or "").strip(), _gemini_key, df)
                 result_df = out.get("result")
                 sql_like = out.get("sql_like", "")
                 if result_df is not None and not result_df.empty:
