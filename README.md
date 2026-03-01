@@ -86,6 +86,17 @@ COLUMNS = {
 
 ---
 
+## 🌐 Streamlit — Data Visualization
+
+Streamlit turns the Master Dataset into a **live, interactive dashboard** in the browser. **Sidebar filters** let users narrow by year range, harm/risk domain, severity, sector, region, country, AI technology, status, and data source; a free-text search runs over titles and descriptions, and **impact filters** restrict to incidents with lives lost or injuries (with minimum thresholds) or by turnaround (occurred → resolved) and time-to-vet (submit → publish) in days. A **Key metrics** row shows total incidents, high-harm count (heuristic), lives lost and injuries (sums and counts), usable data percentage, average and median turnaround and vet time, and pending/open count, with year-over-year change where applicable. A **decision-maker** block offers an **executive risk heatmap** (incident counts by harm domain vs sector or technology), **time to vet** (average days by sector plus the slowest incidents), and a **human-impact** scatter (sector vs lives lost + injuries, sized by incident count). **Trends** include incident volume by year (line chart) and severity/harm-level distribution (bar). **Charts** add pie views by sector and by severity. When the dataset has a source field, **Incidents by data source** gives separate breakdowns for MIT, GMF, and CSET (year trends, top sectors, harm domain, severity). A **word cloud** is built from problem-description text to surface recurring themes. The **Incidents (filtered)** table shows the current filter set with a configurable row limit (100 / 250 / 500 / 1000 / All) and a **Download filtered incidents (CSV)** button. Deploy to Streamlit Community Cloud to share one URL so researchers and policy teams can explore and export the data without opening Excel or Colab.
+
+---
+
+## 🤖 Ask a Question (Gemini / SQL-like Query)
+
+The **Ask a question (Gemini)** feature adds **natural-language search** over the same dataset. Users type a question in plain English (e.g. *“Show me healthcare incidents with high severity”* or *“Which sectors have the most lives lost?”*); the app sends it to the **query handler**, which uses Google’s Gemini API to interpret the question, map it to the dataset’s columns and filters, and produce a query plan. That plan is executed on the loaded DataFrame and the **result table** is shown below; an expandable **Query plan (SQL-like)** section shows the logic so users can see how the answer was built. No pre-built filters or charts are required—the AI bridges “what I want to know” and “what the data can answer.” For deployment, the Gemini API key is set in the app’s **Settings → Secrets** as `google_api_key` so the feature works in production without hardcoding keys in the repo.
+---
+
 ## ❓ Support & Documentation
 
 📚 **Full Documentation**:  
