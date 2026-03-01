@@ -88,8 +88,8 @@ COLUMNS = {
 
 ---
 
-## <a id="streamlit"></a>🌐 Streamlit — Data Visualization(#-https://aiidsdatahouse.streamlit.app)
-
+## <a id="streamlit"></a>🌐 Streamlit — Data Visualization
+**Link to Dashboard:** [aiidsdatahouse.streamlit.app](https://aiidsdatahouse.streamlit.app)
 - **Live dashboard** from the Master Dataset (no spreadsheets required)
 - **Filters + search:** time, domain, severity, sector, geography, AI tech, status, source + keyword search
 - **Impact & speed lenses:** lives lost/injuries thresholds, turnaround time, time-to-vet
