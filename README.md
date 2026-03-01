@@ -10,6 +10,8 @@
 - [📦 What's Included](#-whats-included)
 - [🛠️ How to Customize](#-how-to-customize)
 - [🔍 Key Features](#-key-features)
+- [🌐 Streamlit — Data Visualization](#-streamlit--data-visualization)
+- [🤖 Ask a Question — Query with Custom LLM](#-ask-a-question--query-with-custom-llm)
 - [❓ Support & Documentation](#-support--documentation)
 
 ---
