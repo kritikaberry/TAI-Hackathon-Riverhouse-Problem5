@@ -13,8 +13,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from google import genai
 
-# Hardcode your Gemini API key here (or pass it when calling policy_data_assistant)
-GEMINI_API_KEY = "ADD YOUR KEY HERE"
+# For local runs only. When deployed on Streamlit, the dashboard passes the key from Secrets (st.secrets["google_api_key"]).
+GEMINI_API_KEY = ""  # Optional: add your key here for local runs; leave empty if using Streamlit Secrets.
 
 
 # =========================
@@ -357,6 +357,8 @@ def policy_data_assistant(
       1) Gemini produces a JSON query plan
       2) We execute it safely on merged_df (no eval)
       3) Return plan + SQL-like string + result df
+
+    api_key: from Streamlit Secrets (dashboard passes st.secrets["google_api_key"]) or None to use GEMINI_API_KEY.
     """
     key = (api_key or "").strip() or GEMINI_API_KEY
     if not key:
